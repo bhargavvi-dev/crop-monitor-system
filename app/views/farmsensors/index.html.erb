@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Farmsensors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Farm</th>
+      <th>Sensor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @farmsensors.each do |farmsensor| %>
+      <tr>
+        <td><%= farmsensor.farm %></td>
+        <td><%= farmsensor.sensor %></td>
+        <td><%= link_to 'Show', farmsensor %></td>
+        <td><%= link_to 'Edit', edit_farmsensor_path(farmsensor) %></td>
+        <td><%= link_to 'Destroy', farmsensor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Farmsensor', new_farmsensor_path %>

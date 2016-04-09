@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Farm:</strong>
+  <%= @moisture.farm %>
+</p>
+
+<p>
+  <strong>Crop:</strong>
+  <%= @moisture.crop %>
+</p>
+
+<p>
+  <strong>Mois read:</strong>
+  <%= @moisture.mois_read %>
+</p>
+
+<%= link_to 'Edit', edit_moisture_path(@moisture) %> |
+<%= link_to 'Back', moistures_path %>

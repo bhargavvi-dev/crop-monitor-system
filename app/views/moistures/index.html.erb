@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Moistures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Farm</th>
+      <th>Crop</th>
+      <th>Mois read</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @moistures.each do |moisture| %>
+      <tr>
+        <td><%= moisture.farm %></td>
+        <td><%= moisture.crop %></td>
+        <td><%= moisture.mois_read %></td>
+        <td><%= link_to 'Show', moisture %></td>
+        <td><%= link_to 'Edit', edit_moisture_path(moisture) %></td>
+        <td><%= link_to 'Destroy', moisture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Moisture', new_moisture_path %>

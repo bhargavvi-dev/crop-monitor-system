@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Farm:</strong>
+  <%= @humidity.farm %>
+</p>
+
+<p>
+  <strong>Crop:</strong>
+  <%= @humidity.crop %>
+</p>
+
+<p>
+  <strong>Humi read:</strong>
+  <%= @humidity.humi_read %>
+</p>
+
+<%= link_to 'Edit', edit_humidity_path(@humidity) %> |
+<%= link_to 'Back', humidities_path %>

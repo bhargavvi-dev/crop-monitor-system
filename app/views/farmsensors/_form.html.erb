@@ -1,0 +1,25 @@
+<%= form_for(@farmsensor) do |f| %>
+  <% if @farmsensor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@farmsensor.errors.count, "error") %> prohibited this farmsensor from being saved:</h2>
+
+      <ul>
+      <% @farmsensor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :farm_id %><br>
+    <%= f.text_field :farm_id %>
+  </div>
+  <div class="field">
+    <%= f.label :sensor_id %><br>
+    <%= f.text_field :sensor_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

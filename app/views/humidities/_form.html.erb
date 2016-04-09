@@ -1,0 +1,29 @@
+<%= form_for(@humidity) do |f| %>
+  <% if @humidity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@humidity.errors.count, "error") %> prohibited this humidity from being saved:</h2>
+
+      <ul>
+      <% @humidity.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :farm_id %><br>
+    <%= f.text_field :farm_id %>
+  </div>
+  <div class="field">
+    <%= f.label :crop_id %><br>
+    <%= f.text_field :crop_id %>
+  </div>
+  <div class="field">
+    <%= f.label :humi_read %><br>
+    <%= f.text_field :humi_read %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

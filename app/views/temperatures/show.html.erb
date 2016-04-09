@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Farm:</strong>
+  <%= @temperature.farm %>
+</p>
+
+<p>
+  <strong>Crop:</strong>
+  <%= @temperature.crop %>
+</p>
+
+<p>
+  <strong>Temp read:</strong>
+  <%= @temperature.temp_read %>
+</p>
+
+<%= link_to 'Edit', edit_temperature_path(@temperature) %> |
+<%= link_to 'Back', temperatures_path %>

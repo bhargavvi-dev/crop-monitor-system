@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Farmcrops</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Farm</th>
+      <th>Crop</th>
+      <th>From date</th>
+      <th>To date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @farmcrops.each do |farmcrop| %>
+      <tr>
+        <td><%= farmcrop.farm %></td>
+        <td><%= farmcrop.crop %></td>
+        <td><%= farmcrop.from_date %></td>
+        <td><%= farmcrop.to_date %></td>
+        <td><%= link_to 'Show', farmcrop %></td>
+        <td><%= link_to 'Edit', edit_farmcrop_path(farmcrop) %></td>
+        <td><%= link_to 'Destroy', farmcrop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Farmcrop', new_farmcrop_path %>

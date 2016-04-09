@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  farm_id: 
+  crop_id: 
+  mois_read: 1.5
+
+two:
+  farm_id: 
+  crop_id: 
+  mois_read: 1.5

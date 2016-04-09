@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  ideal_temp: 1.5
+  ideal_humi: 1.5
+  ideal_mois: 1.5
+  min_temp: 1.5
+  max_temp: 1.5
+  min_humi: 1.5
+  max_humi: 1.5
+  min_mois: 1.5
+  max_mois: 1.5
+
+two:
+  name: MyString
+  ideal_temp: 1.5
+  ideal_humi: 1.5
+  ideal_mois: 1.5
+  min_temp: 1.5
+  max_temp: 1.5
+  min_humi: 1.5
+  max_humi: 1.5
+  min_mois: 1.5
+  max_mois: 1.5

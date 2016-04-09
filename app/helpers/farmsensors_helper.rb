@@ -1,0 +1,2 @@
+module FarmsensorsHelper
+end

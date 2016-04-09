@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Farm:</strong>
+  <%= @farmcrop.farm %>
+</p>
+
+<p>
+  <strong>Crop:</strong>
+  <%= @farmcrop.crop %>
+</p>
+
+<p>
+  <strong>From date:</strong>
+  <%= @farmcrop.from_date %>
+</p>
+
+<p>
+  <strong>To date:</strong>
+  <%= @farmcrop.to_date %>
+</p>
+
+<%= link_to 'Edit', edit_farmcrop_path(@farmcrop) %> |
+<%= link_to 'Back', farmcrops_path %>

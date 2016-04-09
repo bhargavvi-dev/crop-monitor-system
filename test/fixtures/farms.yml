@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  farmer_id: 
+  location: MyString
+  description: MyText
+
+two:
+  farmer_id: 
+  location: MyString
+  description: MyText

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Humidities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Farm</th>
+      <th>Crop</th>
+      <th>Humi read</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @humidities.each do |humidity| %>
+      <tr>
+        <td><%= humidity.farm %></td>
+        <td><%= humidity.crop %></td>
+        <td><%= humidity.humi_read %></td>
+        <td><%= link_to 'Show', humidity %></td>
+        <td><%= link_to 'Edit', edit_humidity_path(humidity) %></td>
+        <td><%= link_to 'Destroy', humidity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Humidity', new_humidity_path %>

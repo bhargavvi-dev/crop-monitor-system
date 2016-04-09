@@ -1,0 +1,29 @@
+<%= form_for(@moisture) do |f| %>
+  <% if @moisture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@moisture.errors.count, "error") %> prohibited this moisture from being saved:</h2>
+
+      <ul>
+      <% @moisture.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :farm_id %><br>
+    <%= f.text_field :farm_id %>
+  </div>
+  <div class="field">
+    <%= f.label :crop_id %><br>
+    <%= f.text_field :crop_id %>
+  </div>
+  <div class="field">
+    <%= f.label :mois_read %><br>
+    <%= f.text_field :mois_read %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @crop.name %>
+</p>
+
+<p>
+  <strong>Ideal temp:</strong>
+  <%= @crop.ideal_temp %>
+</p>
+
+<p>
+  <strong>Ideal humi:</strong>
+  <%= @crop.ideal_humi %>
+</p>
+
+<p>
+  <strong>Ideal mois:</strong>
+  <%= @crop.ideal_mois %>
+</p>
+
+<p>
+  <strong>Min temp:</strong>
+  <%= @crop.min_temp %>
+</p>
+
+<p>
+  <strong>Max temp:</strong>
+  <%= @crop.max_temp %>
+</p>
+
+<p>
+  <strong>Min humi:</strong>
+  <%= @crop.min_humi %>
+</p>
+
+<p>
+  <strong>Max humi:</strong>
+  <%= @crop.max_humi %>
+</p>
+
+<p>
+  <strong>Min mois:</strong>
+  <%= @crop.min_mois %>
+</p>
+
+<p>
+  <strong>Max mois:</strong>
+  <%= @crop.max_mois %>
+</p>
+
+<%= link_to 'Edit', edit_crop_path(@crop) %> |
+<%= link_to 'Back', crops_path %>

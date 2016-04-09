@@ -1,0 +1,57 @@
+<%= form_for(@crop) do |f| %>
+  <% if @crop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@crop.errors.count, "error") %> prohibited this crop from being saved:</h2>
+
+      <ul>
+      <% @crop.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :ideal_temp %><br>
+    <%= f.text_field :ideal_temp %>
+  </div>
+  <div class="field">
+    <%= f.label :ideal_humi %><br>
+    <%= f.text_field :ideal_humi %>
+  </div>
+  <div class="field">
+    <%= f.label :ideal_mois %><br>
+    <%= f.text_field :ideal_mois %>
+  </div>
+  <div class="field">
+    <%= f.label :min_temp %><br>
+    <%= f.text_field :min_temp %>
+  </div>
+  <div class="field">
+    <%= f.label :max_temp %><br>
+    <%= f.text_field :max_temp %>
+  </div>
+  <div class="field">
+    <%= f.label :min_humi %><br>
+    <%= f.text_field :min_humi %>
+  </div>
+  <div class="field">
+    <%= f.label :max_humi %><br>
+    <%= f.text_field :max_humi %>
+  </div>
+  <div class="field">
+    <%= f.label :min_mois %><br>
+    <%= f.text_field :min_mois %>
+  </div>
+  <div class="field">
+    <%= f.label :max_mois %><br>
+    <%= f.text_field :max_mois %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
