@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  get 'home/index'
+  get "landingpage/index"
+  
+
+
   devise_for :farmers, :controllers => { registrations: 'registrations' }
-  #devise_for :farmers, :controllers => { registrations: 'registrations' }
   resources :farmsensors
   resources :moistures
   resources :humidities
@@ -10,7 +14,13 @@ Rails.application.routes.draw do
   resources :sensors
   resources :crops
   devise_for :admin_users, ActiveAdmin::Devise.config
-  root to: "admin/dashboard#index"
+  
+  devise_scope :farmer do
+    get 'farmers/sign_out', :to => "devise/sessions#destroy"
+  end
+
+  #root to: "admin/dashboard#index"
+  root to: 'landingpage#index'
   ActiveAdmin.routes(self)
  post "readings" => "temperatures#readings"
   # The priority is based upon order of creation: first created -> highest priority.
