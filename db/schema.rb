@@ -114,6 +114,17 @@ ActiveRecord::Schema.define(version: 20160405100703) do
   add_index "farmsensors", ["farm_id"], name: "index_farmsensors_on_farm_id"
   add_index "farmsensors", ["sensor_id"], name: "index_farmsensors_on_sensor_id"
 
+  create_table "humidities", force: :cascade do |t|
+    t.integer  "farm_id"
+    t.integer  "crop_id"
+    t.float    "humi_read"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "humidities", ["crop_id"], name: "index_humidities_on_crop_id"
+  add_index "humidities", ["farm_id"], name: "index_humidities_on_farm_id"
+
   create_table "moistures", force: :cascade do |t|
     t.integer  "farm_id"
     t.integer  "crop_id"
