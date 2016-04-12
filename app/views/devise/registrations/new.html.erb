@@ -1,44 +1,101 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "form-horizontal"}) do |f| %>
   <%= devise_error_messages! %>
+  <fieldset>
+    <legend>
+      <%= t('signup.create_account') %>
+    </legend>
+    <div class="form-group">
+      <label class="col-lg-2 control-label"></label>
+      <div class="col-lg-8">
+        <% if alert.present? %>
+          <div class="alert alert-dismissible alert-danger">
+            <button class="close" data-dismiss="alert" type="button"></button>
+            <a class="alert-link" href="#">
+              <%= alert %>
+            </a>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  
-  </div> <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
-  </div>
+    <div class="<%= (resource.errors["name"].any? ? "has-error" : '') %> form-group">
+      <label class="col-lg-2 control-label" for="inputName">Name</label>
+      <div class="col-lg-8">
+        <%= f.text_field :name, autofocus: true, placeholder: 'Name', :class => "form-control" %>
+        <% if resource.errors["name"].any? %>
+          <div class="errorMsg">
+            <%= resource.errors["name"][0] %>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
-  </div>
+    
+    <div class="<%= (resource.errors["address"].any? ? "has-error" : '') %> form-group">
+      <label class="col-lg-2 control-label" for="inputAddress">Address</label>
+      <div class="col-lg-8">
+        <%= f.text_field :address, placeholder: 'Address', :class => "form-control" %>
+        <% if resource.errors["address"].any? %>
+          <div class="errorMsg">
+            <%= resource.errors["address"][0] %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="<%= (resource.errors["phone"].any? ? "has-error" : '') %> form-group">
+      <label class="col-lg-2 control-label" for="inputPhone">Phone</label>
+      <div class="col-lg-8">
+        <%= f.text_field :phone, placeholder: 'Phone', :class => "form-control" %>
+        <% if resource.errors["phone"].any? %>
+          <div class="errorMsg">
+            <%= resource.errors["phone"][0] %>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+    <div class="<%= (resource.errors["email"].any? ? "has-error" : '') %> form-group">
+      <label class="col-lg-2 control-label" for="inputEmail">Email</label>
+      <div class="col-lg-8">
+        <%= f.email_field :email, placeholder: 'Email', :class => "form-control" %>
+        <% if resource.errors["email"].any? %>
+          <div class="errorMsg">
+            <%= resource.errors["email"][0] %>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+    <div class="<%= (resource.errors["password"].any? ? "has-error" : '') %> form-group">
+      <label class="col-lg-2 control-label" for="inputPassword">Password</label>
+      <div class="col-lg-8">
+        <%= f.password_field :password, placeholder: 'Password', :class => "form-control" %>
+        <% if resource.errors["password"].any? %>
+          <div class="errorMsg">
+            <%= resource.errors["password"][0] %>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    <div class="<%= (resource.errors["password_confirmation"].any? ? "has-error" : '') %> form-group">
+      <label class="col-lg-2 control-label" for="inputPassword">Confirm Password</label>
+      <div class="col-lg-8">
+        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: 'Confirm Password', :class => "form-control" %>
+        <% if resource.errors["password_confirmation"].any? %>
+          <div class="errorMsg">
+            <%= resource.errors["password_confirmation"][0]      %>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+    <div class="form-group">
+      <div class="col-lg-8 col-lg-offset-2">
+        <%= f.submit "Sign up",:class => "btn btn-success" %>
+      </div>
+    </div>
+  </fieldset>
+<% end %> 

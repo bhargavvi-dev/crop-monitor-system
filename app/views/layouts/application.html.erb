@@ -13,40 +13,46 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<script src="js/SmoothScroll.min.js"></script>
-<script type="text/javascript" src="js/modernizr.custom.js"></script> 
 </head>
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-<!-- Fixed navbar -->
-    <nav class="navbar navbar-default ">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/home/index">Crop Monitoring System</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav navbar-right">
-				<li class="active"> <%= link_to "Home", root_path %></li>
-				<li > <%= link_to "Admin Log In", new_admin_user_session_path %></li>
-          <% if current_farmer %>
-            <li > <%= link_to "LogOut", destroy_farmer_session_path %></li>
-            <li class = 'navbar-brand'> <%= current_farmer.name  %> </li>
-            
-          <%else %>
-            <li > <%= link_to " Farmer Log In", new_farmer_session_path %></li>
-         <%end%>
-				
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-<!-- /Fixed navbar -->	
-<%= yield %>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to 'Devise Demo', root_path, class: 'navbar-brand' %>
+    </div>
+    <div id="navbar">
+      <ul class="nav navbar-nav">
+        <li><%= link_to 'Home', root_path %></li>
+      </ul>
+      <ul class="nav navbar-nav pull-right">
+        <% if farmer_signed_in? %>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <%= current_farmer.name %>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><%= link_to 'Profile', edit_farmer_registration_path %></li>
+              <li><%= link_to 'Log out', destroy_farmer_session_path, method: :delete %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to 'Log In', new_farmer_session_path %></li>
+          <li><%= link_to 'Sign Up', new_farmer_registration_path %></li>
+          <li><%= link_to 'Admin Log In', new_admin_user_session_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </nav>
+  <% if notice.present? %>
+    <div class="alert alert-dismissible alert-info">
+      <button class="close" data-dismiss="alert" type="button"></button>
+      <a class="alert-link" href="#">
+        <%= notice %>
+      </a>
+    </div>
+  <% end %>
+<%= yield %>
 </body>
 </html>

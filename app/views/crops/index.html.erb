@@ -2,9 +2,10 @@
 
 <h1>Listing Crops</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
+    <th>ID</th>
       <th>Name</th>
       <th>Ideal temp</th>
       <th>Ideal humi</th>
@@ -22,6 +23,7 @@
   <tbody>
     <% @crops.each do |crop| %>
       <tr>
+      <td><%= crop.id %></td>
         <td><%= crop.name %></td>
         <td><%= crop.ideal_temp %></td>
         <td><%= crop.ideal_humi %></td>
