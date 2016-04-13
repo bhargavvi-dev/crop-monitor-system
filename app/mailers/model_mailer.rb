@@ -5,14 +5,8 @@ class ModelMailer < ApplicationMailer
   #
   #   en.model_mailer.new_record_notification.subject
   #
-  def new_record_notification123
-    @greeting = "Hi"
-
-    mail to: "bhargavp.sheltersoft@gmail.com"
-  end
-
   def MinT(farmer)
-  	@MinTemo = "Temperature is Low"
+  	@MinTemp = "Temperature is Low"
     @farmer = farmer
     mail(to: @farmer.email, subject: 'Temp Low')
   end
