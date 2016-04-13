@@ -1,0 +1,36 @@
+Heroku setup
+
+- create accoaunt on heroku.
+
+- create application
+
+- how to setup heroku in existing project 
+
+
+
+heroku login
+
+heroku git:remote -a crop-monitor
+git push heroku master
+heroku run rake db:create
+heroku run rake db:migrate
+heroku run rake db:seed
+
+crop-monitor.herokuapps.com
+
+git add .
+git add file1 file2
+git commit -m 'msg'
+git push heroku master
+
+heroku run rake db:create
+heroku run rake db:migrate
+heroku run rake db:seed
+
+https://git.heroku.com/crop-monitor.git
+
+ URL :https://crop-monitor.herokuapp.com
+
+http://localhost:3000/readings?temperature?temp_read=25?humi_read=35?sensor_id=5
+
+
