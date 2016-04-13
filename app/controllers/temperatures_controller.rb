@@ -14,10 +14,10 @@ def readings
 	t.humi_read = params[:humi_read]
 	t.save
 
-	minT = farm.crop.min_temp
-	maxT = farm.crop.max_temp
-	minH = farm.crop.min_humi
-	maxH = farm.crop.min_humi
+	minT = s.farm.crop.min_temp
+	maxT = s.farm.crop.max_temp
+	minH = s.farm.crop.min_humi
+	maxH = s.farm.crop.min_humi
 
   if minT > t.temp_read  	 
     ModelMailer.MinT(farmer).deliver_now
