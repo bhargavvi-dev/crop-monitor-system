@@ -21,10 +21,10 @@ def readings
 
   if minT > t.temp_read  	 
     ModelMailer.MinT(farmer).deliver_now
-    redirect_to home_index_path
+    redirect_to root_path
   elsif  maxT < t.temp_read
 	ModelMailer.MaxT(farmer).deliver_now
-	redirect_to home_index_path
+	redirect_to root_path
   end
 
 
