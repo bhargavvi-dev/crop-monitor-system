@@ -7,12 +7,6 @@ def readings
 	s = Sensor.find(params[:sensor_id])
 	farm = s.farm
 	farmer = farm.farmer
-	minT = farm.crop.min_temp
-	maxT = farm.crop.max_temp
-	minH = farm.crop.min_humi
-	maxH = farm.crop.min_humi
-
-
 	t = Temperature.new
 	t.sensor_id = s.id
 	t.farm_id =  farm.id
@@ -20,6 +14,10 @@ def readings
 	t.temp_read = params[:temp_read]
 	t.humi_read = params[:humi_read]
 	t.save
+	minT = farm.crop.min_temp
+	maxT = farm.crop.max_temp
+	minH = farm.crop.min_humi
+	maxH = farm.crop.min_humi
 
   if minT > t.temp_read  	 
     ModelMailer.MinT(farmer).deliver_now
