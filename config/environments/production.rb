@@ -19,7 +19,7 @@ Rails.application.configure do
      :port => 587,
      :authentication => :plain, # I've also tried changing this to :login
      :domain => "gmail.com",
-     :user_name => "ptlbhargav93@gmail.com",
+     :user_name => "bhargavp.sheltersoft@gmail.com",
      :password => "india@786"
    }  
 
