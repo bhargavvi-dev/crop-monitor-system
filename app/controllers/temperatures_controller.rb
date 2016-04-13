@@ -5,15 +5,15 @@ class TemperaturesController < InheritedResources::Base
 def readings
 	
 	s = Sensor.find(params[:sensor_id])
-	farm = s.farm
-	farmer = farm.farmer
+	farmer = s.farm.farmer
 	t = Temperature.new
 	t.sensor_id = s.id
-	t.farm_id =  farm.id
-	t.crop_id = farm.crop.id
+	t.farm_id =  s.farm.id
+	t.crop_id = s.farm.crop.id
 	t.temp_read = params[:temp_read]
 	t.humi_read = params[:humi_read]
 	t.save
+
 	minT = farm.crop.min_temp
 	maxT = farm.crop.max_temp
 	minH = farm.crop.min_humi
