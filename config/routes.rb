@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :farms
   resources :sensors
   resources :crops
+  resources :farmers
   devise_for :admin_users, ActiveAdmin::Devise.config
   
   devise_scope :farmer do

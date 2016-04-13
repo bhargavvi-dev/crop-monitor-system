@@ -22,8 +22,17 @@
     </div>
     <div id="navbar">
       <ul class="nav navbar-nav">
-        <li><%= link_to 'Home', root_path %></li>
+        <% if farmer_signed_in? %>
+        <li><%= link_to "Crops", crops_path %></li>
+        <li><%= link_to "Farms", farms_path %></li>
+        <li><%= link_to "Sensors", sensors_path %></li>
+        <li><%= link_to "FarmCrop", farmcrops_path %></li>
+        <li><%= link_to "FarmSensor", farmsensors_path %></li>
+        <li><%= link_to "Temperatures", temperatures_path %></li> 
       </ul>
+      <% end %>
+      </div>
+      <div>
       <ul class="nav navbar-nav pull-right">
         <% if farmer_signed_in? %>
           <li class="dropdown">
@@ -43,7 +52,6 @@
         <% end %>
       </ul>
     </div>
-  </div>
 </nav>
   <% if notice.present? %>
     <div class="alert alert-dismissible alert-info">
