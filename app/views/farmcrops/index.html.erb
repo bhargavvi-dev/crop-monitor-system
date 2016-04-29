@@ -16,8 +16,8 @@
   <tbody>
     <% @farmcrops.each do |farmcrop| %>
       <tr>
-        <td><%= farmcrop.farm %></td>
-        <td><%= farmcrop.crop %></td>
+        <td><%= farmcrop.farm.location %></td>
+        <td><%= farmcrop.crop.name %></td>
         <td><%= farmcrop.from_date %></td>
         <td><%= farmcrop.to_date %></td>
         <td><%= link_to 'Show', farmcrop %></td>

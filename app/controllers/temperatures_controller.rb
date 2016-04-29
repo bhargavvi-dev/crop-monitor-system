@@ -3,9 +3,9 @@ class TemperaturesController < InheritedResources::Base
 #From sensor id - find out farm_id
 #create object of temperature and save it to database
 def readings
+
 	
 	s = Sensor.find(params[:sensor_id])
-	farmer = s.farm.farmer
 	t = Temperature.new
 	t.sensor_id = s.id
 	t.farm_id =  s.farm.id
