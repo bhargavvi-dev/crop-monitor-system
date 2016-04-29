@@ -2,12 +2,12 @@
 
 <p>
   <strong>Farm:</strong>
-  <%= @farmsensor.farm %>
+  <%= @farmsensor.farm.location %>
 </p>
 
 <p>
   <strong>Sensor:</strong>
-  <%= @farmsensor.sensor %>
+  <%= @farmsensor.sensor.name %>
 </p>
 
 <%= link_to 'Edit', edit_farmsensor_path(@farmsensor) %> |

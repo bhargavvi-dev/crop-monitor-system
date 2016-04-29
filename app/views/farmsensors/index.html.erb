@@ -14,8 +14,8 @@
   <tbody>
     <% @farmsensors.each do |farmsensor| %>
       <tr>
-        <td><%= farmsensor.farm %></td>
-        <td><%= farmsensor.sensor %></td>
+        <td><%= farmsensor.farm.location %></td>
+        <td><%= farmsensor.sensor.name %></td>
         <td><%= link_to 'Show', farmsensor %></td>
         <td><%= link_to 'Edit', edit_farmsensor_path(farmsensor) %></td>
         <td><%= link_to 'Destroy', farmsensor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
