@@ -2,17 +2,21 @@
 
 <p>
   <strong>Farm:</strong>
-  <%= @temperature.farm %>
+  <%= @temperature.farm.location %>
 </p>
 
 <p>
   <strong>Crop:</strong>
-  <%= @temperature.crop %>
+  <%= @temperature.crop.name %>
 </p>
 
 <p>
   <strong>Temp read:</strong>
   <%= @temperature.temp_read %>
+</p>
+<p>
+  <strong>Humi read:</strong>
+  <%= @temperature.humi_read %>
 </p>
 
 <%= link_to 'Edit', edit_temperature_path(@temperature) %> |

@@ -16,8 +16,8 @@
   <tbody>
     <% @temperatures.each do |temperature| %>
       <tr>
-        <td><%= temperature.farm %></td>
-        <td><%= temperature.crop %></td>
+        <td><%= temperature.farm.location %></td>
+        <td><%= temperature.crop.name %></td>
         <td><%= temperature.temp_read %></td>
         <td><%= temperature.humi_read %></td>
         <td><%= link_to 'Show', temperature %></td>
