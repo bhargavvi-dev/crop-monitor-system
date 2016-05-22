@@ -8,7 +8,8 @@
   <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-
+<link href="bootstrap.css" rel='stylesheet' type='text/css'/>
+<link href="bootstrap.min.css" rel='stylesheet' type='text/css' />
 <link href="style.css" rel="stylesheet" type="text/css" media="all"/>
  <script src="jquery.easing.min.js"></script>
 
@@ -17,9 +18,17 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function(){
+    $(".mydrop").click(function(){
+        $(".mymenu").slideToggle();
+    });
+});
+</script>
 </head>
 <body>
-<div class="navigation">
+<!-- <div class="navigation">
    <div class="container">
      <div class="fixed-header">
        <div class="top-menu">
@@ -63,10 +72,9 @@
        <div class="clearfix"></div>
      </div>
      </div>
-   </div>
-<!-- 
-<nav class="navbar navbar-inverse" style = "margin-bottom: 5px;"  
->
+   </div> -->
+
+<nav class="navbar navbar-inverse">
   <div class="container">
     <div class="navbar-header">
       <%= link_to 'Crop-Monitoring-System', root_path, class: 'navbar-brand' %>
@@ -87,11 +95,11 @@
       <ul class="nav navbar-nav pull-right">
         <% if farmer_signed_in? %>
           <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <a class="dropdown-toggle mydrop" data-toggle="dropdown" href="#">
               <%= current_farmer.name %>
               <span class="caret"></span>
             </a>
-            <ul class="dropdown-menu" role="menu">
+            <ul class="dropdown-menu mymenu" role="menu">
               <li><%= link_to 'Profile', edit_farmer_registration_path %></li>
               <li><%= link_to 'Log out', destroy_farmer_session_path, method: :delete %></li>
             </ul>
@@ -103,7 +111,7 @@
         <% end %>
       </ul>
     </div>
-</nav> -->
+</nav> 
   <% if notice.present? %>
     <div class="alert alert-dismissible alert-info">
       <button class="close" data-dismiss="alert" type="button"></button>

@@ -937,3 +937,22 @@ overflow: hidden;
 height: 53px;
 }
 }
+
+
+.top-head {
+    display: inline-block;
+}
+.nav.navbar-nav {
+    display: inline-block;
+    float: none;
+    margin-left: 30px;
+    margin-top: 4px;
+    vertical-align: top;
+}
+
+.container > div#navbar {
+    float: left;
+}
+
+
+

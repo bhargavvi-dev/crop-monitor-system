@@ -10,48 +10,71 @@
       </ul>
     </div>
   <% end %>
-
+  <table class="table table-striped table-hover">
+    <tr>
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <td><%= f.label :name %></td>
+    <td><%= f.text_field :name %></td>
   </div>
+</tr>
+<tr>
   <div class="field">
-    <%= f.label :ideal_temp %><br>
-    <%= f.text_field :ideal_temp %>
+    <td><%= f.label :ideal_temp %></td>
+    <td><%= f.text_field :ideal_temp %></td>
   </div>
+  </tr>
+    <tr>
   <div class="field">
-    <%= f.label :ideal_humi %><br>
-    <%= f.text_field :ideal_humi %>
+    <td><%= f.label :ideal_humi %> </td>
+    <td><%= f.text_field :ideal_humi %> </td>
   </div>
+  </tr>
+    <tr>
   <div class="field">
-    <%= f.label :ideal_mois %><br>
-    <%= f.text_field :ideal_mois %>
+    <td><%= f.label :ideal_mois %> </td>
+    <td><%= f.text_field :ideal_mois %> </td>
   </div>
+  </tr>
+    <tr>
   <div class="field">
-    <%= f.label :min_temp %><br>
-    <%= f.text_field :min_temp %>
+    <td><%= f.label :min_temp %> </td>
+    <td><%= f.text_field :min_temp %> </td>
   </div>
+</tr>
+<tr>
   <div class="field">
-    <%= f.label :max_temp %><br>
-    <%= f.text_field :max_temp %>
+    <td><%= f.label :max_temp %> </td>
+    <td><%= f.text_field :max_temp %> </td>
   </div>
+</tr>
+<tr>
   <div class="field">
-    <%= f.label :min_humi %><br>
-    <%= f.text_field :min_humi %>
+    <td><%= f.label :min_humi %> </td>
+    <td><%= f.text_field :min_humi %> </td>
   </div>
+  </tr>
+    <tr>
   <div class="field">
-    <%= f.label :max_humi %><br>
-    <%= f.text_field :max_humi %>
+    <td><%= f.label :max_humi %></td>
+    <td><%= f.text_field :max_humi %> </td>
   </div>
+  </tr>
+    <tr>
   <div class="field">
-    <%= f.label :min_mois %><br>
-    <%= f.text_field :min_mois %>
+    <td><%= f.label :min_mois %> </td>
+    <td><%= f.text_field :min_mois %> </td>
   </div>
+</tr>
+<tr>
   <div class="field">
-    <%= f.label :max_mois %><br>
-    <%= f.text_field :max_mois %>
+    <td><%= f.label :max_mois %> </td>
+    <td><%= f.text_field :max_mois %> </td>
   </div>
+  </tr>
+    <tr>
   <div class="actions">
-    <%= f.submit %>
+     <td><%= f.submit %> </td>
   </div>
+ </tr> 
+  </table>
 <% end %>
