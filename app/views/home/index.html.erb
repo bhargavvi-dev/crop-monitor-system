@@ -1,9 +1,33 @@
-<ul class="nav nav-tabs nav-justified">
-  <!-- <li role="presentation" class="active"><%= link_to "Farmers" %></li> -->
-  <li role="presentation" ><%= link_to "Crops", crops_path %></li>
-  <li role="presentation" ><%= link_to "Farms", farms_path %></li>
-  <li role="presentation" ><%= link_to "Sensors", sensors_path %></li>
-  <li role="presentation" ><%= link_to "FarmCrop", farmcrops_path %></li>
-  <li role="presentation" ><%= link_to "FarmSensor", farmsensors_path %></li>
-  <li role="presentation"><%= link_to "Temperatures", temperatures_path %></li>	
-</ul>
+<div class="top-grid">
+	 <div class="container">
+		 <div class="top-grid-section">
+			 <div class="col-md-2 top-grids">
+				 <span class="icon1"></span>
+
+				 <h3><%= link_to "Farms", farms_path %></h3>
+			 </div>
+			 <div class="col-md-2 top-grids">
+				 <span class="icon2"></span>
+				 <h3><%= link_to "Crops", crops_path %></h3>
+			 </div>
+			 <div class="col-md-2 top-grids">
+				 <span class="icon3"></span>
+				 <h3><%= link_to "Sensors", sensors_path %></h3>
+				 
+			 </div>
+			 <div class="col-md-2 top-grids">
+				 <span class="icon4"></span>
+				 <h3><%= link_to "FarmCrop", farmcrops_path %></h3>
+			 </div>
+			  <div class="col-md-2 top-grids">
+				 <span class="icon1"></span>
+				 <h3><%= link_to "FarmSensor", farmsensors_path %></h3>
+			 </div>
+			  <div class="col-md-2 top-grids">
+				 <span class="icon3"></span>
+				 <h3><%= link_to "Temperatures", temperatures_path %></h3>
+			 </div>
+			 <div class="clearfix"></div>
+		 </div>
+	 </div>
+</div>
