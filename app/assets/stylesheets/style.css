@@ -123,10 +123,6 @@ padding:1.3em 0;
 .top-menu{
 float: left;
 }
-.top-head{
-font-size: large;
-}
-
 .right-msg{
 float:right;
 }
@@ -941,3 +937,22 @@ overflow: hidden;
 height: 53px;
 }
 }
+
+
+.top-head {
+    display: inline-block;
+}
+.nav.navbar-nav {
+    display: inline-block;
+    float: none;
+    margin-left: 30px;
+    margin-top: 4px;
+    vertical-align: top;
+}
+
+.container > div#navbar {
+    float: left;
+}
+
+
+
