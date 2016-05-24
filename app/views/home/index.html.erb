@@ -1,4 +1,51 @@
-<div class="top-grid" >
+ <html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+//       function fatch(){
+
+
+// $.ajax({
+//     type: "POST",
+//     url: "http://localhost:3000/data.json",
+//     data: "{temp_read: " + temp_read + "}",
+//     contentType: "application/json; charset=utf-8",
+//     dataType: "json",
+//     success: function(data){
+//         alert(result.d);
+//         console.log(result);
+//     }
+// });
+      // 	$.ajax(http://localhost:3000/data.json, {
+      // success: function drawChart(data) {
+      //    console.log(data); //do whatever you want to do with data
+      // },
+      // error: function() {
+         
+      };
+      function drawChart(data) {
+        var data = google.visualization.arrayToDataTable([
+          ['Time', 'Temp', 'Humi']
+        ]);
+
+        var options = {
+          title: 'Temperatures Humidity ',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+    <div class="top-grid" >
 	 <div class="container">
 		 <div class="top-grid-section">
 			 <div class="col-md-2 top-grids">
@@ -38,3 +85,7 @@
 		 </div>
 	 </div>
 </div>
+
+  </body>
+</html>
+   

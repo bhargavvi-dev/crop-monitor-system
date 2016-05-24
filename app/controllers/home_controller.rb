@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
 	before_action :authenticate_farmer!
-  def index
-  	@farmers = Farmer.all
+  def fatch
+  	@data = Temperature.all
+	render :json => @data
   end
 end

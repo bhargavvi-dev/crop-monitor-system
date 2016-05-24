@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'home/index'
   get "landingpage/index"
-  
+  get 'data', to: 'home#fatch'
 
 
   devise_for :farmers, :controllers => { registrations: 'registrations' }

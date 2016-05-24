@@ -2,6 +2,11 @@ class TemperaturesController < InheritedResources::Base
 #Read url or params and find out temperature and sensor id
 #From sensor id - find out farm_id
 #create object of temperature and save it to database
+ 
+ def index
+  	@data = Temperature.all
+  end
+
 def readings
 	
 	s = Sensor.find(params[:sensor_id])
@@ -26,6 +31,7 @@ def readings
 	ModelMailer.MaxT(farmer).deliver_now
 	redirect_to root_path
   end
+
 
 
 end
