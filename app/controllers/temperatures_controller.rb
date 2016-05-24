@@ -22,27 +22,25 @@ def readings
 	minT = s.farm.crop.min_temp
 	maxT = s.farm.crop.max_temp
 	minH = s.farm.crop.min_humi
-	maxH = s.farm.crop.min_humi
+	maxH = s.farm.crop.max_humi
 
-  if minT > t.temp_read  	 
+  if minT > t.temp_read 
     ModelMailer.MinT(farmer).deliver_now
     redirect_to root_path
-  elsif  maxT < t.temp_read
+  elsif maxT < t.temp_read
 	ModelMailer.MaxT(farmer).deliver_now
 	redirect_to root_path
-  end
-
+ end
   if minH > t.humi_read  	 
     ModelMailer.MinH(farmer).deliver_now
     redirect_to root_path
-  elsif  maxH < t.humi_read
+
+  elsif maxH < t.humi_read
 	ModelMailer.MaxH(farmer).deliver_now
 	redirect_to root_path
   end
-
-
-
 end
+
 
   private
 
