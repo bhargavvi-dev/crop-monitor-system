@@ -32,6 +32,14 @@ def readings
 	redirect_to root_path
   end
 
+  if minH > t.humi_read  	 
+    ModelMailer.MinH(farmer).deliver_now
+    redirect_to root_path
+  elsif  maxH < t.humi_read
+	ModelMailer.MaxH(farmer).deliver_now
+	redirect_to root_path
+  end
+
 
 
 end

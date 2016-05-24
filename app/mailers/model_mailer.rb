@@ -15,4 +15,14 @@ class ModelMailer < ApplicationMailer
     @farmer = farmer
     mail(to: @farmer.email, subject: 'Temp High')
   end
+  def MinH(farmer)
+    @MinHumi = "Humidity is Low"
+    @farmer = farmer
+    mail(to: @farmer.email, subject: 'Humidity Low')
+  end
+  def MaxH(farmer)
+    @MaxHumi = "Humidity is High"
+    @farmer = farmer
+    mail(to: @farmer.email, subject: 'Humidity High')
+  end
 end
