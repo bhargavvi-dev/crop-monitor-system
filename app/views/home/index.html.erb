@@ -5,30 +5,13 @@
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
 
-//       function fatch(){
-
-
-// $.ajax({
-//     type: "POST",
-//     url: "http://localhost:3000/data.json",
-//     data: "{temp_read: " + temp_read + "}",
-//     contentType: "application/json; charset=utf-8",
-//     dataType: "json",
-//     success: function(data){
-//         alert(result.d);
-//         console.log(result);
-//     }
-// });
-      // 	$.ajax(http://localhost:3000/data.json, {
-      // success: function drawChart(data) {
-      //    console.log(data); //do whatever you want to do with data
-      // },
-      // error: function() {
-         
-      };
-      function drawChart(data) {
+      function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Time', 'Temp', 'Humi']
+          ['Time', 'Temp', 'Humi'],
+          ['2004',  35,      45],
+          ['2005',  38,      43],
+          ['2006',  42,      22],
+          ['2007',  45,      25]
         ]);
 
         var options = {
@@ -44,7 +27,7 @@
     </script>
   </head>
   <body>
-    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+    
     <div class="top-grid" >
 	 <div class="container">
 		 <div class="top-grid-section">
@@ -82,6 +65,7 @@
 				 <h3><%= link_to "Temperatures", temperatures_path %></h3>
 			 </div>
 			 <div class="clearfix"></div>
+			 <!-- <div id="curve_chart" style="width: 400px; height: 250px"></div> -->
 		 </div>
 	 </div>
 </div>
