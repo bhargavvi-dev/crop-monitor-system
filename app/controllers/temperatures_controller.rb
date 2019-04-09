@@ -4,7 +4,7 @@ class TemperaturesController < InheritedResources::Base
 #create object of temperature and save it to database
  
  def index
-  	@data = Temperature.all
+  	@temperatures = Temperature.all
   end
 
 def readings
